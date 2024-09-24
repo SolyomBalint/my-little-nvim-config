@@ -25,16 +25,16 @@ return {
             { "hrsh7th/cmp-nvim-lsp" },
             { "L3MON4D3/LuaSnip" },
             { "hrsh7th/cmp-buffer" },
-            {
-                "uga-rosa/cmp-dictionary",
-                lazy = true,
-                config = function()
-                    require("cmp_dictionary").setup({
-                        paths = { "/usr/share/dict/words" },
-                        exact_length = 2,
-                    })
-                end
-            },
+            -- {
+            --     "uga-rosa/cmp-dictionary",
+            --     lazy = true,
+            --     config = function()
+            --         require("cmp_dictionary").setup({
+            --             paths = { "/usr/share/dict/words" },
+            --             exact_length = 2,
+            --         })
+            --     end
+            -- },
             { "f3fora/cmp-spell" },
             { "hrsh7th/cmp-nvim-lsp-document-symbol" },
             { "hrsh7th/cmp-nvim-lsp-signature-help" },
@@ -89,7 +89,7 @@ return {
                                 buffer = "[Buffer]",
                             },
                             { luasnip = "[LuaSnip]" },
-                            { dictionary = "[Dictionary]" },
+                            -- { dictionary = "[Dictionary]" },
                             { spell = "[Spell]" },
                             { async_path = "{AsyncPath}" },
                             { rg = "[RG]" },
@@ -151,20 +151,20 @@ return {
                         priority_weight = 80,
                         group_index = 3,
                     },
-                    {
-
-                        name = "dictionary",
-                        keyword_length = 2,
-                        priority_weight = 50,
-                        entry_filter = function()
-                            local filetype = vim.bo.filetype
-                            if filetype == "markdown" or filetype == "txt" or filetype == "tex" then
-                                return true
-                            end
-                            return false
-                        end,
-                        group_index = 4
-                    },
+                    -- {
+                    --
+                    --     name = "dictionary",
+                    --     keyword_length = 2,
+                    --     priority_weight = 50,
+                    --     entry_filter = function()
+                    --         local filetype = vim.bo.filetype
+                    --         if filetype == "markdown" or filetype == "txt" or filetype == "tex" then
+                    --             return true
+                    --         end
+                    --         return false
+                    --     end,
+                    --     group_index = 4
+                    -- },
                     {
                         name = "spell",
                         priority_weight = 50,
